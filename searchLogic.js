@@ -1,14 +1,14 @@
 "use strict"
 
-const format = require("./resultFormat.js")
+const format = require("./resultFormat")
 
 // Add any new JSON files into this array
 let jsonFiles = ["users", "tickets", "organizations"]
 // This imports the json files mentioned in the array.
 for (let jsonName of jsonFiles) {
-	global[jsonName] = require(`./${jsonName}.json`)
+	global[jsonName] = require(`./${jsonName}`)
 }
-// const text = require("./searchText.js");
+
 let resultCount = 0
 
 // Loops through each item in JSON file
@@ -25,7 +25,7 @@ exports.searchDatabase = (jsonFile, field, value) => {
 let searchField = (object, field, value) => {
 	let lowerCaseValue = value.toLowerCase()
 	if (field in object) {
-		searchTerm(object, field, lowerCaseValue, resultCount)
+		searchTerm(object, field, lowerCaseValue)
 	} else {
 		console.log(`No results matching your search.`)
 	}
@@ -33,8 +33,9 @@ let searchField = (object, field, value) => {
 
 // Looks for matching search value in field, even if stored within an array.
 let searchTerm = (object, field, value) => {
-	// Checks if the lower cased search value is included in any part of an element
+	// Makes search term search-friendly
 	let lowCaseTerm = value.toLowerCase()
+	// Determines if an element matches the search term
 	let includesTerm = (element) => {
 		if (element.constructor === Array) {
 			// Recursively  matches search term to values inside arrays.

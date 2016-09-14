@@ -1,8 +1,8 @@
 "use strict"
-const logic = require("./searchLogic.js");
+
+const logic = require("./searchLogic")
 
 module.exports = {
-
 	// Introduction message
 	intro: `
 Welcome to ZenSearch
@@ -11,7 +11,6 @@ Welcome to ZenSearch
 	quitSearch: `
 Bye! ZenSearch exitted.
 `,
-
 	// Database selection message
 	whatDatabase: `
 Enter the number of the database you want to search:
@@ -21,7 +20,6 @@ Enter the number of the database you want to search:
 
 Type "q" to quit ZenSearch.
 `,
-
 	// Database confirmation message
 	confirmDatabase(database) {
 		return `
@@ -32,7 +30,6 @@ Selected the ${database} database.
 	errorDatabase: `
 Unrecognized input. Please enter the numbers listed or 'q' to quit.
 `,
-
 	// Field selection message
 	whatField(fields) {
 		return `
@@ -53,7 +50,6 @@ Selected the ${field} field.
 	errorField: `
 Unrecognized field. Please type one of the fields listed, 'b' to return, or 'q' to quit.
 `,
-
 	// Search selection message
 	whatTerm: `
 Enter your search term or type "back" to return:
