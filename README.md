@@ -1,6 +1,16 @@
 # Command Line JSON Search Tool
 Although a bit unconventional, I've written a CLI app in ES6 by utilising Node.js just so I can really play with ES6 and see how different it is writing back-end applications from writing in Ruby.
+
 The only obstacle I didn't manage to overcome which might be easier in Ruby is to align results using `sprintf`, which unfortunately isn't a tool in Node.js.
+
+## Note on testing
+**[Writing comprehensive tests is important.](http://chocolatetin.org/2015/08/08/how-to-pass-a-coding-test.html)** I admit that I have only covered testing through Mocha & Chai for a day during my course and so had to read up and wrote tests to the best of my abilities.
+
+That said, I have manually tested the app by entering a wide range of inputs and am confident my code is quite rigorously tested. 
+
+Although I feel I wasn't able to write a test I feel confident about within the context of a code test, I plan to learn how to write more intelligent and comprehensive test in the future.
+
+In the `zenSearch.test.js` file, I have written in pseudo-code what I would have written as tests if I were more familiar with Mocha/Chai, and my results of manually trying those tests.
 
 ## How to run
 ### Download the file
@@ -21,7 +31,6 @@ You can install Node using Brew. In your CLI, enter:
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install node
-npm i -g mocha
 ```
 
 Or directly install Node:
@@ -33,9 +42,23 @@ curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.
 ### Run ES6 code using Node
 In your CLI, navigate to this file's directory and enter:
 ```bash
-npm i # For installing chai
+npm i -g mocha # Allows you to run mocha CLI command
+npm i # For installing test tools: mocha, chai, supertest
 node --harmony searchInterface.js
 ```
+### Run tests
+In the main directory (which the "test" directory is in), enter:
+
+```bash
+mocha
+```
+
+If that doesn't work, enter the test directory and enter:
+
+```bash
+mocha zenSearch.test.json
+```
+
 ## How it works
 The functions of the search app is separated into 4 js files:
 
@@ -79,3 +102,7 @@ In the future, I hope to review why my `alignTabs` function doesn't accurately r
 ### Automated numbering of databases in database selection text
 I am not sure if it is possible to concisely integrate loops in JavaScript looop within text. Consequently, although the database names in the database selection prompt (i.e. `whatDatabase` inside `searchText.js`) changes based on how you order the databases in `jsonFiles` (inside `searchLogic.js`), it does not automatically add or subtract the number of databases to reflect changes.
 
+## Technologies
+
+- Node (v6.4.0)
+- npm (v 3.10.3)

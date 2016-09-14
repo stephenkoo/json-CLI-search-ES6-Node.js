@@ -4,12 +4,13 @@
   "description": "Written in ES6. Utilising Node.js.",
   "main": "searchInterface.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "author": "Stephen Koo",
   "license": "ISC",
   "devDependencies": {
     "chai": "^3.5.0",
+    "mocha": "^3.0.2",
     "supertest": "^2.0.0"
   }
 }

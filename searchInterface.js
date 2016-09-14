@@ -14,7 +14,7 @@ let databaseSelected
 let fieldSelected
 
 // Starts the app
-let runZenSearch = () => {
+exports.runZenSearch = () => {
 	console.log(text.intro)
 	chooseDatabase()
 }
@@ -83,4 +83,4 @@ let chooseSearch = () => {
 }
 
 // Runs the ZenSeach program
-runZenSearch()
+exports.runZenSearch()

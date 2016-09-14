@@ -6,7 +6,7 @@ const format = require("./resultFormat")
 let jsonFiles = ["users", "tickets", "organizations"]
 // This imports the json files mentioned in the array.
 for (let jsonName of jsonFiles) {
-	global[jsonName] = require(`./${jsonName}`)
+	global[jsonName] = require(`./json/${jsonName}`)
 }
 
 let resultCount = 0
