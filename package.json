@@ -1,0 +1,15 @@
+{
+  "name": "json-search-code-challenge",
+  "version": "0.1.0",
+  "description": "Written in ES6. Utilising Node.js.",
+  "main": "searchInterface.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stephen Koo",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "supertest": "^2.0.0"
+  }
+}
