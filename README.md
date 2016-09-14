@@ -14,7 +14,7 @@ In the `zenSearch.test.js` file, I have written in pseudo-code what I would have
 
 ## How to run
 ### Download the file
-On [this GitHub repo](https://github.com/stephenkoo/json-search-challenge.git), click the top right download button to download the zip file.
+On [this GitHub repo](https://github.com/stephenkoo/json-CLI-search-ES6-Node.js.git), click the top right download button to download the zip file.
 Extract the file.
 
 Alternatively, in your CLI (Terminal for OS X), navigate to your desired download directory and enter:
